@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  surfe:
+    build:
+      context: ./
+      dockerfile: build/docker/Dockerfile
+    ports:
+      - "8081:8081"
+    env_file:
+      - ".env"
+    command: [ 'server' ]
+    restart: on-failure
+
