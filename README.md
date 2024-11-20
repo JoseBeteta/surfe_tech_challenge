@@ -1,13 +1,4 @@
-# Surfe one API Documentation
-
-Welcome to the surfe technical challange documentation.
-This API will fulfil the requirements of the contracts provided.
-
-## Additional proposals
-I realised that there might be some improvements in the way that the data is handled in the 
-last 2 exercises of the task.
-I decided to create a diagram to explain these improvements and what would i do in a real case scenario.
-
+ 
 ## Quick run
 
 ```shell
@@ -99,6 +90,7 @@ $ make test
 
 #### Improvements to be done:
 
+[Imrpovements](documentation/improvements.md)
 * Improving testing.
 * Integration of read models and events.
 * Validation on the request schema.
