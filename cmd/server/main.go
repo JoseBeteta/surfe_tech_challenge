@@ -42,7 +42,7 @@ func setupServer(cfg app.Config, log slog.Logger) *http.Server {
 	httpMapper.Initialize(r)
 
 	usersFile := os.Getenv("USERS_FILE")
-	actionsFile := os.Getenv("USERS_FILE")
+	actionsFile := os.Getenv("ACTIONS_FILE")
 
 	userReadRepository := action_infrastructure.NewUserJSONRepository(usersFile)
 	actionReadRepository := action_infrastructure.NewActionJSONRepository(actionsFile)
