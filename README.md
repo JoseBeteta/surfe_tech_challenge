@@ -2,6 +2,7 @@
 ## Quick run
 
 ```shell
+// docker required
 $ cp .env.dist .env
 $ make install
 $ make run
