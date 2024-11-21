@@ -2,6 +2,7 @@
 ## Quick run
 
 ```shell
+// docker required
 $ cp .env.dist .env
 $ make install
 $ make run
@@ -23,7 +24,7 @@ curl --location 'http://localhost:8080/api/users/1' \
 }
 ```
 ### Get action count by user
-Endpoint to retrieve count of actions vy user
+Endpoint to retrieve count of actions by user
 ```
 curl --location 'http://localhost:8080/api/actions/users/4' \
 --header 'Content-Type: application/vnd.surfe.v1+json'
@@ -54,11 +55,9 @@ curl --location 'http://localhost:8080/api/actions/probability/users/EDIT_CONTAC
 ```
 
 ### Get referrals by user
-endpoint to get the “Referral Index” of all the Users.
+Endpoint to get the “Referral Index” of all the users
 ### Approach used:
-Since the main issue that i found was that i had to iterate a lot of records, i decided to use the Depth-First Search algorithm in order to find all the user referrals recursively, this algorithm 
-allows you to avoid visiting the same user twice and optimize the memory and time of processing.
-The algorithm is also taking into account if a user is referred by 2 users (even if it cannot happen).
+Since the main challenge I encountered was the need to iterate through a large number of records, I decided to use the Depth-First Search (DFS) algorithm to recursively find all user referrals. This algorithm helps avoid visiting the same user twice, optimizing both memory usage and processing time. Additionally, the algorithm accounts for scenarios where a user might be referred by multiple users, even though such cases are not expected to occur.
 ```
 curl --location 'http://localhost:8080/api/actions/referral' \
 --header 'Content-Type: application/vnd.surfe.v1+json'
@@ -83,14 +82,14 @@ curl --location 'http://localhost:8080/api/actions/referral' \
 ```
 
 ## TEST
-There's not a lot of coverage of testing, i decided to test the most important with unit test, and i ignored the integration and component test for this challenge.  
+There is limited test coverage in this implementation. I prioritized writing unit tests for the most critical parts of the code, while intentionally omitting integration and component tests for the purposes of this challenge.
 ```shell
 $ make test
 ```
 
 #### Improvements to be done:
 
-[Imrpovements](documentation/improvements.md)
+[Imrpovements documentation](documentation/improvements.md)
 * Improving testing.
 * Integration of read models and events.
 * Validation on the request schema.
